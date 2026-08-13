@@ -3,43 +3,39 @@
  * Dynamic Event Catalog, Live Countdown, Search Modal, Login Portal, & E-Pass Generator
  */
 
+// Global Dark Mode Theme Switcher (Runs immediately on script load)
+window.toggleDarkMode = function () {
+    const themeIcon = document.getElementById('themeIcon');
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        if (document.body) document.body.removeAttribute('data-theme');
+        localStorage.setItem('rendezvousTheme', 'light');
+        if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
+        if (typeof showToast === 'function') showToast('Light Mode Activated ☀️', 'fa-sun');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (document.body) document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('rendezvousTheme', 'dark');
+        if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+        if (typeof showToast === 'function') showToast('Dark Mode Activated 🌙', 'fa-moon');
+    }
+};
+
+// Immediately apply saved theme on load
+(function initTheme() {
+    const savedTheme = localStorage.getItem('rendezvousTheme') || 'light';
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Dark Theme Toggle Switcher Handler with LocalStorage Persistence
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    // Sync theme icon state on DOM ready
     const themeIcon = document.getElementById('themeIcon');
-
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.body.setAttribute('data-theme', 'dark');
-            if (themeIcon) {
-                themeIcon.className = 'fa-solid fa-sun';
-            }
-        } else {
-            document.documentElement.removeAttribute('data-theme');
-            document.body.removeAttribute('data-theme');
-            if (themeIcon) {
-                themeIcon.className = 'fa-solid fa-moon';
-            }
-        }
-    }
-
-    // Initialize saved theme preference
-    const savedTheme = localStorage.getItem('rendezvousTheme') || 'light';
-    applyTheme(savedTheme);
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
-            localStorage.setItem('rendezvousTheme', newTheme);
-            applyTheme(newTheme);
-            if (typeof showToast === 'function') {
-                showToast(newTheme === 'dark' ? 'Dark Mode Activated 🌙' : 'Light Mode Activated ☀️', newTheme === 'dark' ? 'fa-moon' : 'fa-sun');
-            }
-        });
+    if (themeIcon && document.documentElement.getAttribute('data-theme') === 'dark') {
+        themeIcon.className = 'fa-solid fa-sun';
     }
 
     // Sample Festival Events Data
