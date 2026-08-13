@@ -6,16 +6,25 @@
 // Global Dark Mode Theme Switcher (Runs immediately on script load)
 window.toggleDarkMode = function () {
     const themeIcon = document.getElementById('themeIcon');
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const isDark = document.documentElement.classList.contains('dark-mode') || document.documentElement.getAttribute('data-theme') === 'dark';
+
     if (isDark) {
+        document.documentElement.classList.remove('dark-mode');
         document.documentElement.removeAttribute('data-theme');
-        if (document.body) document.body.removeAttribute('data-theme');
+        if (document.body) {
+            document.body.classList.remove('dark-mode');
+            document.body.removeAttribute('data-theme');
+        }
         localStorage.setItem('rendezvousTheme', 'light');
         if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
         if (typeof showToast === 'function') showToast('Light Mode Activated ☀️', 'fa-sun');
     } else {
+        document.documentElement.classList.add('dark-mode');
         document.documentElement.setAttribute('data-theme', 'dark');
-        if (document.body) document.body.setAttribute('data-theme', 'dark');
+        if (document.body) {
+            document.body.classList.add('dark-mode');
+            document.body.setAttribute('data-theme', 'dark');
+        }
         localStorage.setItem('rendezvousTheme', 'dark');
         if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
         if (typeof showToast === 'function') showToast('Dark Mode Activated 🌙', 'fa-moon');
@@ -26,6 +35,7 @@ window.toggleDarkMode = function () {
 (function initTheme() {
     const savedTheme = localStorage.getItem('rendezvousTheme') || 'light';
     if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
         document.documentElement.setAttribute('data-theme', 'dark');
     }
 })();
