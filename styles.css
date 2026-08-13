@@ -1937,6 +1937,33 @@ html {
     will-change: transform;
 }
 
+/* Counter Pop Animation on Final Count */
+@keyframes counterPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.18);
+        color: #7c4dff;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.counter-pulse {
+    animation: counterPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+#themeToggleBtn {
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+#themeToggleBtn:hover {
+    transform: rotate(25deg) scale(1.08);
+}
+
 .cursor-glow.active {
     opacity: 1;
 }

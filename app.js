@@ -636,16 +636,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     animateCounter(entry.target);
                 } else {
-                    // Reset to 0 when scrolled out of view so count-up re-animates smoothly
                     entry.target.dataset.running = 'false';
                     const suffix = entry.target.getAttribute('data-suffix') || '';
                     entry.target.innerText = '0' + suffix;
                     entry.target.classList.remove('counting', 'counter-pulse');
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.01,
+            rootMargin: '0px 0px -10px 0px'
+        });
 
-        counterElements.forEach(el => counterObserver.observe(el));
+        counterElements.forEach(el => {
+            counterObserver.observe(el);
+            // Trigger immediately if already inside viewport on initial page load
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                animateCounter(el);
+            }
+        });
     }
 
     // Site-wide Simple Scroll Reveal Observer
