@@ -43,8 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Sample Festival Events Data
-    // PosterGen Style Competition Result Posters Data
+    // PosterGen Style Competition Result Posters Data across all category pills
     const eventsData = [
+        // Sub Junior
         {
             id: 1,
             title: "Poem Malayalam",
@@ -54,10 +55,119 @@ document.addEventListener('DOMContentLoaded', () => {
             winnerCount: 3,
             publishedDate: "23/09/2025",
             grade: "A+ Grade",
-            image: "assets/concert.jpg"
+            image: "assets/fest_moment4.png"
         },
         {
             id: 2,
+            title: "Elocution English",
+            category: "subjunior",
+            categoryName: "Sub Junior",
+            resultNo: "172",
+            winnerCount: 3,
+            publishedDate: "23/09/2025",
+            grade: "A Grade",
+            image: "assets/fest_moment5.png"
+        },
+
+        // Minor
+        {
+            id: 3,
+            title: "Pencil Drawing",
+            category: "minor",
+            categoryName: "Minor",
+            resultNo: "170",
+            winnerCount: 3,
+            publishedDate: "23/09/2025",
+            grade: "A+ Distinction",
+            image: "assets/fest_moment2.png"
+        },
+        {
+            id: 4,
+            title: "Quran Recitation",
+            category: "minor",
+            categoryName: "Minor",
+            resultNo: "169",
+            winnerCount: 3,
+            publishedDate: "23/09/2025",
+            grade: "A Grade",
+            image: "assets/fest_moment1.png"
+        },
+
+        // High School
+        {
+            id: 5,
+            title: "Essay Writing Arabic",
+            category: "highschool",
+            categoryName: "High School",
+            resultNo: "168",
+            winnerCount: 3,
+            publishedDate: "24/09/2025",
+            grade: "A+ Grade",
+            image: "assets/fest_moment2.png"
+        },
+        {
+            id: 6,
+            title: "Group Song Harmony",
+            category: "highschool",
+            categoryName: "High School",
+            resultNo: "165",
+            winnerCount: 4,
+            publishedDate: "24/09/2025",
+            grade: "A Distinction",
+            image: "assets/fest_moment6.png"
+        },
+
+        // Premiere
+        {
+            id: 7,
+            title: "Campus Debate Championship",
+            category: "premiere",
+            categoryName: "Premiere",
+            resultNo: "164",
+            winnerCount: 3,
+            publishedDate: "24/09/2025",
+            grade: "A+ Distinction",
+            image: "assets/fest_moment2.png"
+        },
+        {
+            id: 8,
+            title: "AI & Innovation Presentation",
+            category: "premiere",
+            categoryName: "Premiere",
+            resultNo: "160",
+            winnerCount: 3,
+            publishedDate: "24/09/2025",
+            grade: "A+ Grade",
+            image: "assets/fest_moment3.png"
+        },
+
+        // Junior
+        {
+            id: 9,
+            title: "Extempore Speech Malayalam",
+            category: "junior",
+            categoryName: "Junior",
+            resultNo: "158",
+            winnerCount: 3,
+            publishedDate: "24/09/2025",
+            grade: "A Grade",
+            image: "assets/fest_moment4.png"
+        },
+        {
+            id: 10,
+            title: "Calligraphy English",
+            category: "junior",
+            categoryName: "Junior",
+            resultNo: "155",
+            winnerCount: 3,
+            publishedDate: "24/09/2025",
+            grade: "A+ Grade",
+            image: "assets/fest_moment5.png"
+        },
+
+        // General (B)
+        {
+            id: 11,
             title: "Calligraphy ARB",
             category: "general",
             categoryName: "General (B)",
@@ -68,27 +178,27 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "assets/bento_student.jpg"
         },
         {
-            id: 3,
-            title: "Qawwali",
+            id: 12,
+            title: "Qawwali Stage Performance",
             category: "general",
             categoryName: "General (B)",
             resultNo: "176",
             winnerCount: 3,
             publishedDate: "24/09/2025",
             grade: "A+ Distinction",
-            image: "assets/dance.jpg"
+            image: "assets/fest_moment6.png"
         },
         {
-            id: 4,
-            title: "Email Messenger",
+            id: 13,
+            title: "Email Messenger Tech Contest",
             category: "general",
             categoryName: "General (B)",
             resultNo: "175",
             winnerCount: 4,
             publishedDate: "24/09/2025",
             grade: "A Grade",
-            image: "assets/robotics.jpg"
-        },
+            image: "assets/fest_moment3.png"
+        }
     ];
 
     // State Variables
