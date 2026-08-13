@@ -1948,3 +1948,158 @@ html {
 .team-card {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE MEDIA QUERIES (MOBILE & TABLET)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .hero-title {
+        font-size: 2.8rem !important;
+    }
+
+    .bento-row {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .bento-white-card {
+        width: 100% !important;
+    }
+
+    .top-three-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 10px 14px !important;
+    }
+
+    .floating-nav {
+        padding: 8px 16px !important;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .hero-section {
+        padding-top: 130px !important;
+        padding-bottom: 120px !important;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .hero-para {
+        font-size: 0.95rem !important;
+    }
+
+    .hero-cta-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero-cta-group .btn-pill-primary,
+    .hero-cta-group .btn-pill-secondary {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .top-three-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .postergen-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pillars-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    .pillars-header-right {
+        text-align: left !important;
+    }
+
+    .postergen-card {
+        padding: 10px !important;
+    }
+
+    .postergen-actions {
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+
+    .pg-btn-view-posters,
+    .pg-btn-green-download {
+        width: 100% !important;
+    }
+
+    .modal-card {
+        padding: 20px !important;
+        max-width: 94% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.05rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.85rem !important;
+    }
+
+    .badge-pill {
+        font-size: 0.78rem !important;
+        padding: 4px 12px !important;
+    }
+
+    .stat-number {
+        font-size: 2.2rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.88rem !important;
+    }
+
+    .filter-pills {
+        gap: 6px !important;
+    }
+
+    .filter-btn {
+        padding: 6px 14px !important;
+        font-size: 0.78rem !important;
+    }
+}
